@@ -16,3 +16,4 @@ Matlab tools used:
 
 The report has all details regarding the implementation. 
 
+![image](https://github.com/user-attachments/assets/ee1c31ce-36ea-4382-a359-c6d55ab2b079)
