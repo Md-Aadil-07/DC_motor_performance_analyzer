@@ -10,6 +10,6 @@ Matlab tools used:
 - Workspace
 - Code generator
 - Model advisor
-- Polyspace
+
 The report has all details regarding the implementation. 
 
