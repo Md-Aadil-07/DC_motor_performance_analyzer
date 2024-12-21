@@ -1,0 +1,696 @@
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>
+    <title></title>
+    <style>
+/*<![CDATA[*/
+    
+table.SummaryTable {
+	padding:2px;
+	text-align:left;
+	border: thin solid white;
+	border-collapse:separate;
+}
+
+table.SummaryTable>tbody>tr:first-child>td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: bold;
+	color: black;
+	background-color: #C3DCFF;
+	border: thin solid white;
+	margin: 0px;
+}
+
+table.SummaryTable>tbody>tr:nth-child(even)>td {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	color: black;
+	background-color: #EBEBEB;
+	border: thin solid white;
+}
+
+table.SummaryTable>tbody>tr:nth-child(odd)>td {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	color: black;
+	border: thin solid white;
+    text-align:center;
+}
+
+
+table.SummaryTable>tbody>tr:nth-child(odd)>td:nth-child(4) {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	color: black;
+	border: thin solid white;
+	text-align:left;
+}
+
+table.SignalTable {
+	padding:2px;
+	text-align:left;
+	border: thin solid white;
+	border-collapse:separate;
+}
+
+table.SignalTable>tbody>tr:first-child>td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: bold;
+	color: black;
+	background-color: #C3DCFF;
+	border: thin solid white;
+	margin: 0px;
+}
+
+table.SignalTable>tbody>tr:nth-child(2)>td {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	color: black;
+	border: thin solid white;
+	text-align:left;
+}
+
+p.Heading1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18pt;
+	color: #2B4F81;
+	font-style: normal;
+	font-weight: bold;
+	border-bottom-width: 1pt;
+	border-bottom-style: solid;
+	border-bottom-color: #2B4F81;
+}
+
+p.Heading2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15pt;
+	color: #2B4F81;
+	font-style: normal;
+	font-weight: bold;
+	border-bottom-width: 1pt;
+	border-bottom-style: solid;
+	border-bottom-color: #2B4F81;
+}
+
+p.Heading3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: black;
+	font-style: normal;
+	font-weight: bold;
+}
+
+p.DescriptionTitle {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 15pt;
+	color: #2B4F81;
+	font-style: normal;
+	font-weight: bold;
+	border-bottom-width: 1pt;
+	border-bottom-style: solid;
+	border-bottom-color: #2B4F81;
+}
+
+p.Description {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: normal;
+	color: Black;
+}
+
+
+p.TimeStamp {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: italic;
+	color: Black;
+}
+
+span.LinkText {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: Blue;
+}
+
+p.GroupHeader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: bold;
+	color: black;
+}
+
+span.TestLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: Black;
+    font-weight: bold;
+}
+
+span.TestValue {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: Black;
+    font-weight: bold;
+}
+
+span.TestUnitLabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: Black;
+    font-weight: bold;
+}
+
+p.Caption {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: Black;
+    font-weight: bold;
+}
+
+
+form.Hole {
+  font-size: x-small;
+  color: #3333ff;
+  font-family: "Courier New",Courier,monospace;
+  font-weight: bold;
+  padding-right: 2px;
+  padding-left: 4 px;
+}
+
+div.Hole {
+  font-size: x-small;
+  color: #3333ff;
+  font-family: "Courier New",Courier,monospace;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 2px;
+  padding-left: 8px;
+  border-radius: 5px;
+  background: #FFF482;
+  box-shadow: 0 0 0 2px #FFF482;
+}
+
+span.Hole {
+  font-size: x-small;
+  color: #3333ff;
+  font-family: "Courier New",Courier,monospace;
+  font-weight: bold;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 2px;
+  padding-left: 8px;
+  border-radius: 5px;
+  background: #FFF482;
+  box-shadow: 0 0 0 2px #FFF482;
+}
+
+span.HoleId {
+  font-size: small;
+}
+
+span.HoleDesc {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-style: dotted;
+  border-width: 1px;
+}
+
+@import url(hole.css);
+@import url(docpart_templates.css);
+
+ol.toc > li {
+  list-style:none;
+}
+
+table {
+  border-collapse:collapse;
+  border-color:#000000;
+}
+
+ttable.ReportGrid {
+  color: rgb(0,0,0);
+  border: 1px solid black;
+  border-collapse:collapse;
+}
+
+thead.ReportGrid {
+  border: 1px solid black;
+  font-weight:bold;
+}
+
+
+th.ReportGrid {
+  border: 1px solid black;
+  font-weight:bold;
+  padding:5px;
+}
+
+tr.ReportGrid {
+  margin-left: 2%;
+}
+
+td.ReportGrid {
+  border: 1px solid black;
+  padding:5px;
+  text-align:center;
+}
+
+ol.toc {
+  /*counter-reset: numsection;*/
+  list-style-type: none;
+  padding-left: 32px;
+}
+
+ol.toc > li {
+  /*counter-increment: numsection;*/
+  text-indent: -12px;
+  padding-left: 12px;
+}
+
+ol.toc > li > * {
+  text-indent: 0;
+}
+
+a.toc_sec_title::before {
+  /*content: counters(numsection, ".") ". ";*/
+  font-weight: bold;
+}
+
+a.toc_no_title {
+  font-style: italic;
+}
+/*]]>*/
+    </style>
+    <script>
+        //<![CDATA[
+var cssrule;
+(function (cssrule) {
+
+    function createStyleSheet() {
+        var style = document.createElement("style");
+
+        // Add a media (and/or media query) here if you'd like!
+        // style.setAttribute("media", "screen")
+        // style.setAttribute("media", "@media only screen and (max-width : 1024px)")
+
+        // WebKit hack :(
+        style.appendChild(document.createTextNode(""));
+
+        // Add the <style> element to the page
+        document.head.appendChild(style);
+
+        return style.sheet;
+    }
+
+    function addCSSRule(selector, rules, index) {
+        if (document.styleSheets) {
+            var sheet = createStyleSheet();
+            if (sheet) {
+                if (sheet.insertRule) {
+                    return sheet.insertRule(selector + " {" + rules + "}", index);
+                }
+                else {
+                    return sheet.addRule(selector, rules, index);
+                }
+            }
+        }
+        return null;
+    }
+    cssrule.addCSSRule = addCSSRule;
+
+})(cssrule || (cssrule = {}));        
+        //]]>
+    </script>
+    <script>
+        //<![CDATA[
+var toc;
+(function (toc) {
+    var showDetails = false;
+
+    function createOutline(outline) {
+        var ol = document.createElement("ol");
+        ol.className = "toc";
+        for (var i = 0; i < outline.length; i++) {
+            ol.appendChild(createSection(outline[i]));
+        }
+        return ol;
+    }
+    toc.createOutline = createOutline;
+
+    function createSection(section) {
+        var li = document.createElement("li");
+
+        var title = document.createElement("a");
+        title.className = "toc_sec_title";
+        li.appendChild(title);
+
+        if (section.heading === null) {
+            switch (section.associatedNodes[0].nodeName.toLowerCase()) {
+                case "blockquote":
+                    title.textContent = "Quoted content";
+                    break;
+                case "body":
+                    title.textContent = "Document";
+                    break;
+                case "details":
+                    title.textContent = "Widget";
+                    break;
+                case "fieldset":
+                    title.textContent = "Form controls";
+                    break;
+                case "figure":
+                    title.textContent = "Figure";
+                    break;
+                case "td":
+                    title.textContent = "Data cell";
+                    break;
+                case "article":
+                    title.textContent = "Article";
+                    break;
+                case "aside":
+                    title.textContent = "Aside";
+                    break;
+                case "nav":
+                    title.textContent = "Navigation";
+                    break;
+                case "section":
+                    title.textContent = "Section";
+                    break;
+            }
+            title.className += "toc_no_title";
+        } else {
+            title.textContent = section.heading.text;
+        }
+
+        var node = section.associatedNodes[0];
+        if ((node.sectionType !== 1 && node.sectionType !== 2) ||
+            (node.nodeName.toLowerCase() === "body")) {
+            node = section.heading;
+        }
+        title.href = "#" + node.id;
+
+        title.addEventListener("click", function (event) {
+            event.preventDefault();
+            node.scrollIntoView();
+        }, false);
+
+        li.appendChild(createOutline(section.childSections));
+        return li;
+    }
+
+    function Section() {
+        this.parentSection = null;
+        this.childSections = [];
+        this.firstChild = null;
+        this.lastChild = null;
+        this.appendChild = function (section) {
+            section.parentSection = this;
+            this.childSections.push(section);
+            if (this.firstChild === null) {
+                this.firstChild = section;
+            }
+            this.lastChild = section;
+        };
+
+        this.heading = null;
+
+        this.associatedNodes = [];
+    }
+    toc.Section = Section;
+
+    function HTMLOutline(root) {
+        var currentOutlinee = null;
+
+        var currentSection = null;
+
+        var stack = { "lastIndex": -1, "isEmpty": null, "push": null, "pop": null, "top": null };
+        stack.isEmpty = function () {
+            return stack.lastIndex === -1;
+        };
+        stack.push = function (e) {
+            stack[++stack.lastIndex] = e;
+            stack.top = e;
+        };
+        stack.pop = function () {
+            var e = stack.top;
+            delete stack[stack.lastIndex--];
+            stack.top = stack[stack.lastIndex];
+            return e;
+        };
+
+        function enter(node) {
+            if (isElement(node)) {
+                if (!stack.isEmpty() && (isHeadingElement(stack.top) || isHidden(stack.top))) {
+                } else if (isHidden(node)) {
+                    stack.push(node);
+                } else if (isSectioningContentElement(node) || isSectioningRootElement(node)) {
+                    if (currentOutlinee !== null) {
+                        stack.push(currentOutlinee);
+                    }
+                    currentOutlinee = node;
+                    currentSection = new Section();
+                    associateNodeWithSection(currentOutlinee, currentSection);
+                    currentOutlinee.appendSection(currentSection);
+                } else if (currentOutlinee === null) {
+                } else if (isHeadingElement(node)) {
+                    if (currentSection.heading === null)
+                        currentSection.heading = node;
+else if (currentOutlinee.lastSection.heading === null || node.rank >= currentOutlinee.lastSection.heading.rank) {
+                        currentSection = new Section();
+                        currentSection.heading = node;
+                        currentOutlinee.appendSection(currentSection);
+                    } else {
+                        var candidateSection = currentSection;
+                        do {
+                            if (node.rank < candidateSection.heading.rank) {
+                                currentSection = new Section();
+                                currentSection.heading = node;
+                                candidateSection.appendChild(currentSection);
+                                break;
+                            }
+                            var newCandidate = candidateSection.parentSection;
+                            candidateSection = newCandidate;
+                        } while(true);
+                    }
+                    stack.push(node);
+                }
+            }
+        }
+
+        function exit(node) {
+            if (isElement(node)) {
+                if (!stack.isEmpty() && node === stack.top) {
+                    stack.pop();
+                } else if (!stack.isEmpty() && (isHeadingElement(stack.top) || isHidden(stack.top))) {
+                } else if (!stack.isEmpty() && isSectioningContentElement(node)) {
+                    currentOutlinee = stack.pop();
+                    currentSection = currentOutlinee.lastSection;
+                    for (var i = 0; i < node.sectionList.length; i++) {
+                        currentSection.appendChild(node.sectionList[i]);
+                    }
+                } else if (!stack.isEmpty() && isSectioningRootElement(node)) {
+                    currentOutlinee = stack.pop();
+                    currentSection = currentOutlinee.lastSection;
+                    while (currentSection.childSections.length > 0) {
+                        currentSection = currentSection.lastChild;
+                    }
+                } else if (isSectioningContentElement(node) || isSectioningRootElement(node)) {
+                    currentOutlinee = null;
+                    currentSection = null;
+                }
+            }
+            if (node.associatedSection === null && currentSection !== null) {
+                associateNodeWithSection(node, currentSection);
+            }
+        }
+
+        function associateNodeWithSection(node, section) {
+            section.associatedNodes.push(node);
+            node.associatedSection = section;
+        }
+
+        function isElement(node) {
+            return node.nodeType === 1;
+        }
+
+        function isHidden(node) {
+            return node.hidden;
+        }
+
+        function isSectioningContentElement(node) {
+            return node.sectionType === 1;
+        }
+
+        function isSectioningRootElement(node) {
+            return node.sectionType === 2;
+        }
+
+        function isHeadingElement(node) {
+            return node.rank !== undefined;
+        }
+
+        function extend(node) {
+            if (node.nodeType === 1) {
+                switch (node.nodeName.toLowerCase()) {
+                    case "blockquote":
+                    case "body":
+                    case "details":
+                    case "dialog":
+                    case "fieldset":
+                    case "figure":
+                    case "td":
+                        extendSectioningRootElement(node);
+                        break;
+                    case "article":
+                    case "aside":
+                    case "nav":
+                    case "section":
+                        extendSectioningContentElement(node);
+                        break;
+                    case "h1":
+                    case "h2":
+                    case "h3":
+                    case "h4":
+                    case "h5":
+                    case "h6":
+                        extendHeadingElement(node);
+                        break;
+                    case "hgroup":
+                        extendHeadingGroupElement(node);
+                        break;
+                    default:
+                        extendNode(node);
+                }
+            } else
+                extendNode(node);
+        }
+
+        function extendNode(node) {
+            node.associatedSection = null;
+        }
+
+        function extendSectioningElement(node) {
+            extendNode(node);
+            node.sectionList = [];
+            node.firstSection = null;
+            node.lastSection = null;
+
+            node.appendSection = function (section) {
+                this.sectionList.push(section);
+                if (this.firstSection === null) {
+                    this.firstSection = section;
+                }
+                this.lastSection = section;
+            };
+        }
+
+        function extendSectioningContentElement(node) {
+            extendSectioningElement(node);
+            node.sectionType = 1;
+        }
+
+        function extendSectioningRootElement(node) {
+            extendSectioningElement(node);
+            node.sectionType = 2;
+        }
+
+        function extendHeadingContentElement(node) {
+            extendNode(node);
+            Object.defineProperty(node, "depth", {
+                "get": function () {
+                    var section = node.associatedSection;
+                    var depth = 1;
+                    if (section !== null) {
+                        while (section = section.parentSection)
+                            ++depth;
+                    }
+                    return depth;
+                },
+                "configurable": true,
+                "enumerable": true
+            });
+        }
+
+        function extendHeadingElement(node) {
+            extendHeadingContentElement(node);
+            node.rank = -parseInt(node.nodeName.charAt(1));
+            node.text = node.textContent;
+        }
+
+        function extendHeadingGroupElement(node) {
+            extendHeadingContentElement(node);
+
+            for (var i = 1; i <= 6; i++) {
+                var h = node.getElementsByTagName("h" + i);
+                if (h.length > 0) {
+                    node.rank = -i;
+                    node.text = h[0].textContent;
+                    break;
+                }
+            }
+
+            if (node.rank === undefined) {
+                node.rank = -1;
+                node.text = "";
+            }
+        }
+
+        var node = root;
+        start:
+        while (node) {
+            extend(node);
+            enter(node);
+            if (node.firstChild) {
+                node = node.firstChild;
+                continue start;
+            }
+            while (node) {
+                exit(node);
+                if (node === root) {
+                    break start;
+                }
+                if (node.nextSibling) {
+                    node = node.nextSibling;
+                    continue start;
+                }
+                node = node.parentNode;
+            }
+        }
+    }
+    toc.HTMLOutline = HTMLOutline;
+})(toc || (toc = {}));
+        //]]>
+    </script>
+    <script>
+        //<![CDATA[
+        function outline() {
+            var tocDiv = document.getElementById('toc');
+            if (tocDiv) {
+                var content = document.body;
+                toc.HTMLOutline(content);
+                if (content.sectionList) {
+                    tocDiv.appendChild(toc.createOutline(content.sectionList));
+                }
+            }
+        }
+        //]]>
+    </script>
+<style>
+/*<![CDATA[*//*CombinedCSS Placeholder*//*]]>*/
+</style></head>
+<body onload="outline()"><p class="Heading1"><span>Simulation Data Inspector:	Inspect Signals</span></p><p class="TimeStamp"><span>Report Generated	21-Dec-2024 12:10:27</span></p><p><span></span></p><p class="GroupHeader"><span>Run 34: dc_series_motor_performance</span></p><table class="SummaryTable"><colgroup span="2"><col/><col/></colgroup><tr><td><p style="text-align:left;"><span>Name</span></p></td><td><p style="text-align:center;"><span>Line</span></p></td></tr><tr><td><p style="text-align:left;"><span>Efficiency :1</span></p></td><td><p style="text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAABCAIAAABYG7kIAAAAB3RJTUUH6AwVBigc2SX3tAAAAA9JREFUCJlj9N33joEUAABceAH7MsPxJQAAAABJRU5ErkJggg==" style="width:20px;height:4px;"/></p></td></tr><tr><td><p style="text-align:left;"><span>ip power :1</span></p></td><td><p style="text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAABCAIAAABYG7kIAAAAB3RJTUUH6AwVBigc2SX3tAAAAA9JREFUCJljXCSiz0AKAAAq4ADnGcDrXgAAAABJRU5ErkJggg==" style="width:20px;height:4px;"/></p></td></tr><tr><td><p style="text-align:left;"><span>op power:1</span></p></td><td><p style="text-align:center;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAABCAIAAABYG7kIAAAAB3RJTUUH6AwVBigc2SX3tAAAAA9JREFUCJlj/J+pyUAKAABK1wGTwhekjgAAAABJRU5ErkJggg==" style="width:20px;height:4px;"/></p></td></tr></table><p><span></span></p><p><img src="data:image/png;base64,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" style="width:547px;height:391px;"/></p>
+     
+</body>
+</html>
