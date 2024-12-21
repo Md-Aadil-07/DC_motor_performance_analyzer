@@ -1,4 +1,4 @@
-# DC_motor_performance_analyzer
+# DC motor performance analyzer
 The objective is to plot performance characteristics of DC machines.
 The system composer file gives the system design and the necessary requirements associated with it. [ MBSE ]
 The variant model linked in the system design realizes the parameters and plots the characteristics.
