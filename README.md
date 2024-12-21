@@ -10,6 +10,9 @@ Matlab tools used:
 - Workspace
 - Code generator
 - Model advisor
+- HIL testing [ Hardware in Loop ]
+- MIL testing [ Model in Loop ]
+- PIL testing [ Processor in Loop ]
 
 The report has all details regarding the implementation. 
 
