@@ -11,5 +11,5 @@ Matlab tools used:
 - Code generator
 - Model advisor
 - Polyspace
-  The report has all details regarding the implementation. 
+The report has all details regarding the implementation. 
 
